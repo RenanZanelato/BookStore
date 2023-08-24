@@ -9,23 +9,24 @@ Estas instruções oferecem uma cópia do projeto em execução na sua máquina 
 ### Pré-requisitos
 
 - .NET Core 5.0 ou superior: [Download & Installation Guide](https://dotnet.microsoft.com/download)
-- Docker: [Download & Installation Guide](https://docs.docker.com/get-docker/)
 
-## 🛠️ Configuração e Execução com Docker
+## 🛠️ Configuração e Execução Local
 
-### 1. Construção da Imagem Docker
+### 1. Clonando o repositório
 
-Na raiz do projeto (onde o `Dockerfile` está localizado), execute o seguinte comando para construir a imagem Docker da aplicação:
+Primeiro, clone o repositório para sua máquina local.
 
-`docker build -t livraria:latest .`
+### 2. Executando a aplicação
 
-### 2. Executando a aplicação em um contêiner
+Navegue até a pasta do projeto e execute os seguintes comandos:
 
-Após construir a imagem, você pode executar a aplicação usando:
+1. Para restaurar as dependências:
+`dotnet restore`
 
-`docker run -d -p 8080:80 --name livraria_container livraria:latest`
+2. Para executar a aplicação:
+`dotnet run`
 
-Agora, sua aplicação estará rodando e você poderá acessá-la em `http://localhost:8080`.
+Após isso, sua aplicação estará rodando e você poderá acessá-la em `http://localhost:5000` (ou a porta especificada na configuração).
 
 ## 📞 Contato
 Roani Pires - roanipiresdasilva@gmail.com
