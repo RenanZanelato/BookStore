@@ -41,9 +41,6 @@ $RECYCLE.BIN/
 appsettings.Development.json
 appsettings.Local.json
 
-# Arquivos temporários do Rider
-.idea/
-
 # Arquivos de banco de dados SQLite, caso você use SQLite
 *.db
 *.sqlite3
@@ -55,11 +52,5 @@ appsettings.Local.json
 *.cer
 *.key
 
-# Arquivos Rider
-.idea/
-
 # Arquivos OSX
 .DS_Store
-
-# Node.js (caso você use algum pacote frontend como Angular, React, etc.)
-node_modules
