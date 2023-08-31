@@ -10,13 +10,13 @@ namespace Livraria.Models
 
         public DbSet<Autor> Autores { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
-        // Outros DbSets
+        public DbSet<Livro> Livros { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Autor>().ToTable("autores");
             modelBuilder.Entity<Categoria>().ToTable("categorias");
-            // Configurações para outras entidades
+            modelBuilder.Entity<Livro>().ToTable("livros");
         }
     }
 }

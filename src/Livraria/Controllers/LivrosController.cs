@@ -1,29 +1,101 @@
-// Importando as bibliotecas necessárias.
-// Fornece classes e interfaces para construir aplicativos web ASP.NET Core MVC.
+﻿using Livraria.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-
-// Contém interfaces e classes que definem coleções genéricas.
+using Microsoft.EntityFrameworkCore;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-// Atributo que indica que esta classe é um controlador de API.
-[ApiController]
-// Define a rota padrão para o controlador.
-// "[controller]" é um substituto para o nome da classe do controlador (sem a palavra "Controller").
-[Route("[controller]")]
-public class LivrosController : ControllerBase
+namespace Livraria.Controllers
 {
-    // Declaração de uma lista privada, estática e somente leitura chamada 'Livros'.
-    // Esta lista contém dois nomes de livros como strings.
-    private static readonly List<string> Livros = new List<string>
+    [Route("api/[controller]")]
+    [ApiController]
+    public class LivrosController : ControllerBase
     {
-        "O senhor dos aneis", "Star Wars"
-    };
+        private readonly LivrariaContext _context;
 
-    // Método que é invocado quando uma solicitação HTTP GET é feita para o endpoint deste controlador.
-    // Retorna a lista de livros com um status HTTP 200 (OK).
-    [HttpGet]
-    public ActionResult<IEnumerable<string>> Get()
-    {
-        return Ok(Livros);
+        public LivrosController(LivrariaContext context)
+        {
+            _context = context;
+        }
+
+        // GET: api/livros
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Livro>>> GetLivros(int id)
+        {
+            return await _context.Livros.ToListAsync();
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Livro>> GetLivro(int id)
+        {
+            var livro = await _context.Livros.FindAsync(id);
+
+            if (livro == null)
+            {
+                return NotFound();
+            }
+
+            return livro;
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Livro>> PostLivro(Livro livro)
+        {
+            _context.Livros.Add(livro);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetLivro", new {id = livro.LivroId }, livro);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteLivro(int id)
+        {
+            var livro = await _context.Livros.FindAsync(id);
+            if (livro == null)
+            {
+                return NotFound();
+            }
+
+            _context.Livros.Remove(livro);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+        [HttpPut("{id}")]
+        //erro no put, verificar
+        public async Task<IActionResult> PutLivro(int id, Livro livro)
+        {
+            if (id != livro.LivroId)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(livro).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!LivroExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return NoContent();
+        }
+
+        private bool LivroExists(int id)
+        {
+            return _context.Livros.Any(e => e.LivroId == id);
+        }
     }
 }
