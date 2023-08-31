@@ -62,8 +62,8 @@ namespace Livraria.Controllers
 
             return NoContent();
         }
+
         [HttpPut("{id}")]
-        //erro no put, verificar
         public async Task<IActionResult> PutLivro(int id, Livro livro)
         {
             if (id != livro.LivroId)
