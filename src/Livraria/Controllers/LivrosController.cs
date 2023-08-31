@@ -20,7 +20,6 @@ namespace Livraria.Controllers
             _context = context;
         }
 
-        // GET: api/livros
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Livro>>> GetLivros(int id)
         {

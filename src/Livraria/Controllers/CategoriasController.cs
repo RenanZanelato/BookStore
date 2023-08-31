@@ -21,7 +21,6 @@ namespace Livraria.Controllers
             _context = context;
         }
 
-        //GET: api/categorias
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Categoria>>> GetCategorias()
         {
@@ -41,7 +40,6 @@ namespace Livraria.Controllers
             return categoria;
         }
 
-        //POST: api/categorias
         [HttpPost]
         public async Task<ActionResult<Categoria>> PostCategoria(Categoria categoria)
         {
@@ -51,7 +49,6 @@ namespace Livraria.Controllers
             return CreatedAtAction("GetCategoria", new { id = categoria.CategoriaId }, categoria);
         }
 
-        // PUT: api/categorias/3
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCategoria(int id, Categoria categoria)
         {
@@ -81,7 +78,6 @@ namespace Livraria.Controllers
 
         }
 
-        // DELETE: api/categorias/2
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategoria(int id)
         {

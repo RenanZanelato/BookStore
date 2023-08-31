@@ -19,14 +19,12 @@ namespace Livraria.Controllers
             _context = context;
         }
 
-        // GET: api/autores
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Autor>>> GetAutores()
         {
             return await _context.Autores.ToListAsync();
         }
 
-        // GET: api/autores/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Autor>> GetAutor(int id)
         {
@@ -40,7 +38,6 @@ namespace Livraria.Controllers
             return autor;
         }
 
-        // POST: api/autores
         [HttpPost]
         public async Task<ActionResult<Autor>> PostAutor(Autor autor)
         {
@@ -50,7 +47,6 @@ namespace Livraria.Controllers
             return CreatedAtAction("GetAutor", new { id = autor.AutorId }, autor);
         }
 
-        // PUT: api/autores/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAutor(int id, Autor autor)
         {
@@ -80,7 +76,6 @@ namespace Livraria.Controllers
             return NoContent();
         }
 
-        // DELETE: api/autores/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAutor(int id)
         {
