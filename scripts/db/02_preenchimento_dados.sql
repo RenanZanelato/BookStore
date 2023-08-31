@@ -36,16 +36,3 @@ INSERT INTO Livros (titulo, isbn, data_publicacao, preco, quantidade_estoque, au
 ('Berserk', '978-4-08-872787-3', '1990-08-25', 9.99, 100, 8, 3),
 ('Death Note', '978-4-08-872853-5', '2003-12-01', 9.99, 100, 9, 1),
 ('Inuyasha', '978-4-08-872870-2', '1996-11-13', 9.99, 100, 10, 1);
-
--- Preenchimento da tabela Clientes
-INSERT INTO Clientes (nome, email, telefone, endereco) VALUES
-('João Silva', 'joao.silva@gmail.com', '123456789', 'Rua A, 1'),
-('Maria Oliveira', 'maria.oliveira@gmail.com', '987654321', 'Rua B, 2'),
-('Carlos Pereira', 'carlos.pereira@gmail.com', '456123789', 'Rua C, 3'),
-('Ana Santos', 'ana.santos@gmail.com', '321789456', 'Rua D, 4'),
-('Paulo Lima', 'paulo.lima@gmail.com', '159357258', 'Rua E, 5'),
-('Fernanda Souza', 'fernanda.souza@gmail.com', '753951246', 'Rua F, 6'),
-('Luiz Costa', 'luiz.costa@gmail.com', '852963741', 'Rua G, 7'),
-('Patrícia Menezes', 'patricia.menezes@gmail.com', '654987123', 'Rua H, 8'),
-('José Martins', 'jose.martins@gmail.com', '456789123', 'Rua I, 9'),
-('Cláudia Machado', 'claudia.machado@gmail.com', '987654321', 'Rua J, 10');
