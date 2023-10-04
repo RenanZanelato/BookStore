@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Livraria.Domain", "Livraria.Domain\Livraria.Domain.csproj", "{31601A1F-36AF-4FB9-A00F-AED7BE08A34D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Livraria.Infrastructure.Data", "Livraria.Infrastructure.Data\Livraria.Infrastructure.Data.csproj", "{7B66B95A-5FE0-4305-9AF9-B49BF5E25538}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Livraria.Api", "Livraria.Api\Livraria.Api.csproj", "{68E72B2C-C314-4648-814C-F832DEC9BF5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31601A1F-36AF-4FB9-A00F-AED7BE08A34D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31601A1F-36AF-4FB9-A00F-AED7BE08A34D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31601A1F-36AF-4FB9-A00F-AED7BE08A34D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31601A1F-36AF-4FB9-A00F-AED7BE08A34D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B66B95A-5FE0-4305-9AF9-B49BF5E25538}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B66B95A-5FE0-4305-9AF9-B49BF5E25538}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B66B95A-5FE0-4305-9AF9-B49BF5E25538}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B66B95A-5FE0-4305-9AF9-B49BF5E25538}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68E72B2C-C314-4648-814C-F832DEC9BF5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68E72B2C-C314-4648-814C-F832DEC9BF5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68E72B2C-C314-4648-814C-F832DEC9BF5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68E72B2C-C314-4648-814C-F832DEC9BF5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

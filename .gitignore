@@ -1,0 +1,56 @@
+## .gitignore para projetos ASP.NET Core
+
+# Binários e diretórios de objetos
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# Arquivos temporários gerados pelo Resharper, VSCode, Visual Studio, etc.
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.cache
+*.vscode/
+*.vscode/launch.json
+*.vscode/settings.json
+*.vscode/tasks.json
+.vs/
+.vscode/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Pasta de arquivos do Recycle Bin usado no Windows
+$RECYCLE.BIN/
+
+# Logs de compilador .NET Core
+*.rsp
+
+# Arquivos de Configuração Local do ASP.NET
+appsettings.Development.json
+appsettings.Local.json
+
+# Arquivos de banco de dados SQLite, caso você use SQLite
+*.db
+*.sqlite3
+*.sqlite
+
+# Certificados gerados localmente
+*.pfx
+*.crt
+*.cer
+*.key
+
+# Arquivos OSX
+.DS_Store
